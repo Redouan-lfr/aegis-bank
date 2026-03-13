@@ -8,6 +8,14 @@
 
     /* RESPONSIVE */
     --container-modbile: 150px;
+
+    /* PALETTE */
+    --primary: #6d32fa;
+    --secondary: #9383e5;
+    --accent: #830303;
+
+    /* BACKGROUND */
+    --bg: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
 body {
@@ -16,11 +24,16 @@ body {
     margin: 0;
     padding: 0;
 
-    background: #726f6f;
+    background: var(--bg);
 }
 
 
 #hide-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
     z-index: 999;
 
@@ -30,13 +43,6 @@ body {
     height: 95vh;
 
     background: rgb(37, 33, 33);
-}
-
-#hide-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     gap: 25px;
 
