@@ -1,56 +1,252 @@
+/* =========================
+   RESPONSIVE ≤ 800px
+   - Passage en mode tablette / petit laptop
+   - Le header s'étale sur toute la largeur
+   - La nav desktop disparaît
+   - Le burger apparaît
+   - Les boutons auth passent en colonne
+========================= */
 @media (max-width: 800px) {
     header {
+        width: 100%;
 
-        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
     }
 
-    h1 {
+    /* Le titre reste au centre logique du header */
+    header > h1 {
+        order: 2;
         font-size: 55px;
     }
 
-    .header--burgermenu {
-        display: block;
+    /* La nav desktop est masquée */
+    .nav {
+        display: none;
+        order: 2;
+        align-items: center;
+        justify-content: center;
+        padding: 0.4rem;
+        min-width: auto;
+        gap: 0;
     }
 
-    #logging {
+    /* Sécurité : on masque aussi les liens internes */
+    .nav > a {
         display: none;
+    }
+
+    /* Burger affiché à gauche */
+    .header--burgermenu {
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        cursor: pointer;
+    }
+
+    /* Bloc auth placé à droite et empilé en colonne */
+    .header--auth {
+        order: 3;
+
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        gap: 0.55rem;
+
+        flex-direction: column;
+    }
+
+    /* Boutons légèrement réduits pour tenir dans le header */
+    .header--auth-connect_a,
+    .header--auth-signin_a {
+        min-width: 135px;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+        line-height: 1;
+    }
+
+    /* Footer recentré sur plusieurs lignes */
+    .footer {
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Les deux groupes du footer prennent toute la largeur */
+    .footer__socials,
+    .footer__legal {
+        justify-content: center;
+        width: 100%;
     }
 }
 
 
+/* =========================
+   RESPONSIVE ≤ 600px
+   - Mobile standard
+   - Réduction du titre, du burger et des boutons
+========================= */
 @media (max-width: 600px) {
     header {
         padding: 5px 15px;
+        gap: 0.75rem;
     }
 
-    h1 {
+    /* Titre réduit */
+    header > h1 {
+        order: 2;
         font-size: 35px;
     }
 
-    .header--burgermenu i {
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
+    /* Nav toujours masquée, mais on garde les réglages de structure */
+    .nav {
+        order: 2;
+        padding: 0.35rem;
+    }
+
+    .nav > a {
+        display: none;
+    }
+
+    /* Burger plus compact */
+    .header--burgermenu {
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.6rem;
+        height: 2.6rem;
+        flex-shrink: 0;
+    }
+
+    /* On conserve bien la couleur des 3 lignes */
+    .header--burgermenu-line,
+    .header--burgermenu-line::before,
+    .header--burgermenu-line::after {
+        background: var(--text-main);
+    }
+
+    /* Boutons auth plus resserrés */
+    .header--auth {
+        order: 3;
+        gap: 0.45rem;
+    }
+
+    .header--auth-connect_a,
+    .header--auth-signin_a {
+        min-width: 118px;
+        padding: 0.6rem 0.85rem;
+        font-size: 0.82rem;
+        border-radius: 0.65rem;
+    }
+
+    /* Footer un peu plus respirant malgré le petit écran */
+    .footer {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    /* Icônes footer légèrement réduites */
+    .footer__social-link {
+        width: 2.9rem;
+        height: 2.9rem;
+    }
+
+    .footer__social-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    /* Les liens légaux passent en colonne */
+    .footer__legal {
+        gap: 0.75rem 1rem;
+        flex-direction: column;
+    }
+
+    .footer__link {
+        font-size: 0.9rem;
     }
 }
 
+
+/* =========================
+   RESPONSIVE ≤ 400px
+   - Très petits mobiles
+   - Version ultra compacte
+========================= */
 @media (max-width: 400px) {
-
     header {
-        padding: 5px 15px;
+        padding: 5px 12px;
+        gap: 0.5rem;
     }
 
-    header>img {
-        width: 50px;
-    }
-
-    h1 {
+    /* Titre très compact */
+    header > h1 {
+        order: 2;
         font-size: 25px;
     }
 
-    .header--burgermenu i {
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
+    /* Nav toujours masquée / compacte */
+    .nav {
+        order: 2;
+        padding: 0.3rem;
+    }
+
+    .nav > a {
+        display: none;
+    }
+
+    /* Burger encore un peu plus petit */
+    .header--burgermenu {
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        flex-shrink: 0;
+    }
+
+    /* Bloc auth encore plus serré */
+    .header--auth {
+        order: 3;
+        gap: 0.35rem;
+    }
+
+    .header--auth-connect_a,
+    .header--auth-signin_a {
+        min-width: 102px;
+        padding: 0.5rem 0.7rem;
+        font-size: 0.76rem;
+        border-radius: 0.6rem;
+    }
+
+    /* Footer plus compact */
+    .footer {
+        width: 94%;
+        padding: 0.875rem;
+    }
+
+    .footer__socials {
+        gap: 0.75rem;
+    }
+
+    .footer__social-link {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+
+    .footer__social-icon {
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+
+    .footer__link {
+        font-size: 0.85rem;
     }
 }
