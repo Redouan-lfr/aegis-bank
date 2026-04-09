@@ -75,6 +75,8 @@
     .footer {
         justify-content: center;
         text-align: center;
+
+        height: fit-content;
     }
 
     /* Les deux groupes du footer prennent toute la largeur */
@@ -82,7 +84,9 @@
     .footer__legal {
         justify-content: center;
         width: 100%;
-        padding: 0.5rem;
+
+        padding: 0.25rem;
+        margin: 0;
     }
 }
 
@@ -149,6 +153,11 @@
         border-radius: 0.65rem;
     }
 
+    .main__card-pormo {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
     /* Footer un peu plus respirant malgré le petit écran */
     .footer {
         padding: 1rem;
@@ -168,7 +177,7 @@
 
     /* Les liens légaux passent en colonne */
     .footer__legal {
-        gap: 0.75rem 1rem;
+        gap: 0.75rem;
         flex-direction: column;
     }
 
