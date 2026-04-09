@@ -14,6 +14,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
+        margin-bottom: 0;
     }
 
     /* Le titre reste au centre logique du header */
@@ -77,6 +78,9 @@
         text-align: center;
 
         height: fit-content;
+        margin-top: 1rem;
+
+        padding: 0;
     }
 
     /* Les deux groupes du footer prennent toute la largeur */
