@@ -82,6 +82,7 @@
     .footer__legal {
         justify-content: center;
         width: 100%;
+        padding: 0.5rem;
     }
 }
 
@@ -92,6 +93,9 @@
    - Réduction du titre, du burger et des boutons
 ========================= */
 @media (max-width: 600px) {
+    .main--title {
+        font-size: 1.5rem;
+    }
     header {
         padding: 5px 15px;
         gap: 0.75rem;
