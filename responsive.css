@@ -156,10 +156,13 @@
         font-size: 0.82rem;
         border-radius: 0.65rem;
     }
+    .main__cta {
+        margin: 0.25rem 0;
+    }
 
     .main__card-pormo {
         margin-top: 0;
-        padding-top: 0;
+        padding: 0;
     }
 
     /* Footer un peu plus respirant malgré le petit écran */
