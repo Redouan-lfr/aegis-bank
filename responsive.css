@@ -161,20 +161,20 @@
     }
 
     .main__card-pormo {
-        margin-top: 0;
+        margin: 1rem auto;
         padding: 0;
     }
 
     /* Footer un peu plus respirant malgré le petit écran */
     .footer {
-        padding: 1rem;
+        padding: 0.5rem;
         gap: 1rem;
     }
 
     /* Icônes footer légèrement réduites */
     .footer__social-link {
-        width: 2.9rem;
-        height: 2.9rem;
+        width: 2rem;
+        height: 2rem;
     }
 
     .footer__social-icon {
@@ -184,7 +184,6 @@
 
     /* Les liens légaux passent en colonne */
     .footer__legal {
-        gap: 0.75rem;
         flex-direction: column;
     }
 
@@ -244,6 +243,11 @@
         padding: 0.5rem 0.7rem;
         font-size: 0.76rem;
         border-radius: 0.6rem;
+    }
+
+    .main__card-pormo {
+        margin-bottom: 0;
+        padding: 0;
     }
 
     /* Footer plus compact */
