@@ -63,7 +63,7 @@ body {
     background: var(--bg);
     font-family: 'Montserrat', sans-serif;
 
-    height: 100%;
+    height: fit-content;
 
     display: flex;
     flex-direction: column;
@@ -450,7 +450,7 @@ main {
     width: 80%;
     max-width: 500px;
 
-    margin: 3rem auto;
+    margin: 1rem auto;
     padding: 1rem 2rem;
 
     border-radius: 0.5rem;
