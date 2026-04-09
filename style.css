@@ -350,9 +350,6 @@ nav {
 /* Hover nav */
 .nav a:hover {
     color: var(--text-main);
-    background: rgba(139, 92, 246, 0.14);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(109, 50, 250, 0.18);
 }
 
 /* Petite ligne gradient animée sous le lien */
@@ -388,6 +385,11 @@ nav {
 ========================= */
 main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
 }
 
 /* Titre principal avec gradient */
@@ -416,33 +418,39 @@ main {
     font-size: 1rem;
 }
 
-
-/* =========================
-   CARD PROMO
-   - Carte glass au centre
-   - Bordure glow décorative
-========================= */
-.main--card-promo {
+.main__cta {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
 
-    color: var(--text-main);
-    width: 15rem;
+    margin: 1rem 2rem;
+    padding: 1rem 1.6rem;
 
-    margin: 3rem auto;
-    padding: 1.25rem 2rem;
-
-    border-radius: 1rem;
     border: 1px solid rgba(139, 92, 246, 0.22);
+    border-radius: 1rem;
 
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
+
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.96rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+
+    cursor: pointer;
+
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 
-    text-align: center;
+    transition:
+            transform 0.25s ease,
+            background 0.25s ease,
+            border-color 0.25s ease;
 }
 
-/* Bordure gradient décorative */
-.main--card-promo::after {
+.main__cta::after {
     content: "";
     position: absolute;
     inset: -1px;
@@ -455,20 +463,40 @@ main {
     pointer-events: none;
 }
 
-/* Montant de la promo */
-.main--card-promo > h3 {
-    margin: 0;
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: var(--text-main);
+.main__cta:hover {
+    background: rgba(255, 255, 255, 0.06);
 }
 
-/* Texte secondaire */
-.main--card-promo > span {
-    display: block;
-    margin-top: 0.55rem;
-    color: var(--text-soft);
-    font-size: 0.85rem;
+.main__cta:active {
+    transform: translateY(0);
+}
+
+.main__cta:focus-visible {
+    outline: 2px solid rgba(139, 92, 246, 0.5);
+    outline-offset: 4px;
+}
+
+/* =========================
+   CARD PROMO
+   - Carte glass au centre
+   - Bordure glow décorative
+========================= */
+.main--card-promo {
+    color: var(--text-main);
+    width: 80%;
+    max-width: 500px;
+
+    margin: 3rem auto;
+    padding: 1rem 2rem;
+
+    border-radius: 0.5rem;
+    border: 1px solid rgba(139, 92, 246, 0.22);
+
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
 }
 
 
