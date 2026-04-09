@@ -7,6 +7,7 @@
 @import url('conponents/__bg.css');
 @import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
 @import './responsive.css';
+@import './style/_var.css';
 
 
 /* =========================
@@ -40,48 +41,6 @@
 
 
 /* =========================
-   VARIABLES
-   - Palette générale du site
-   - Couleurs de texte
-   - Couleurs de surfaces glassmorphism
-========================= */
-:root {
-    /* Couleur accent secondaire */
-    --red: #c1121f;
-
-    /* Palette principale */
-    --primary: #6d32fa;
-    --secondary: #8b5cf6;
-    --accent: #c1121f;
-
-    /* Fond global */
-    --bg: linear-gradient(135deg, #02081f, #0b1130);
-    --card-bg: rgba(139, 92, 246, 0.14);
-
-    /* Variable responsive éventuelle */
-    --container-mobile: 150px;
-
-    /* Effets visuels / particules / sphères */
-    --color-primary: #6d32fa;
-    --color-secondary: rgba(139, 92, 246, 0.28);
-    --color-bg2: #1b2447;
-    --particle-color: #8b5cf6;
-
-    /* Couleurs de texte */
-    --text-main: #ffffff;
-    --text-soft: #d6dcff;
-    --text-dark: #111827;
-
-    /* Surfaces glass */
-    --surface-light: rgba(255, 255, 255, 0.08);
-    --surface-border: rgba(255, 255, 255, 0.18);
-
-    /* Rayon générique */
-    --border-radius: 0.5rem;
-}
-
-
-/* =========================
    RESET / BASE
    - Reset léger
    - Base du document
@@ -94,7 +53,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 body {
@@ -104,7 +63,7 @@ body {
     background: var(--bg);
     font-family: 'Montserrat', sans-serif;
 
-    height: 100vh;
+    height: fit-content;
 
     display: flex;
     flex-direction: column;
@@ -476,6 +435,11 @@ main {
     outline-offset: 4px;
 }
 
+.main--target::after {
+    content: 'créateur';
+    padding-left: 0.25rem;
+}
+
 /* =========================
    CARD PROMO
    - Carte glass au centre
@@ -522,7 +486,7 @@ main {
     z-index: 10;
 
     width: min(90%, 1100px);
-    margin: 2rem auto 1.5rem;
+    margin: 2rem auto 0.5rem;
     padding: 0.45rem;
 
     display: flex;
