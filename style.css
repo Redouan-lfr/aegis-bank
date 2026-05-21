@@ -77,39 +77,6 @@ main,
     z-index: 10;
 }
 
-
-/* =========================
-   MENU MOBILE CACHÉ
-   - Overlay plein écran
-   - Utilisé pour le burger menu
-========================= */
-#hide-menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    width: 100%;
-    height: 95vh;
-    gap: 25px;
-
-    z-index: 999;
-
-    background: rgba(2, 8, 31, 0.55);
-    backdrop-filter: blur(10px);
-}
-
-/* Liens du menu caché */
-#hide-menu a {
-    font-size: 20px;
-    color: var(--text-main);
-    text-decoration: none;
-}
-
 /* Classe utilitaire pour masquer un élément */
 .hide {
     display: none !important;
@@ -126,9 +93,8 @@ header {
     justify-content: space-between;
 
     width: 90%;
-    height: 5rem;
 
-    margin: 2rem 0;
+    margin: 0.5rem 0;
     padding: 10px 2rem;
     gap: 20px;
 
@@ -223,15 +189,14 @@ header > h1 {
 
 /* Bouton principal : Connexion */
 .header--auth-connect_a {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: rgb(72, 42, 143);
     color: var(--text-main);
     border: 1px solid transparent;
     box-shadow: 0 8px 20px rgba(109, 50, 250, 0.25);
 }
 
 .header--auth-connect_a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(109, 50, 250, 0.35);
+    background: rgb(109, 50, 250);
 }
 
 .header--auth-connect_a:active {
@@ -388,7 +353,7 @@ main {
     border: 1px solid rgba(139, 92, 246, 0.22);
     border-radius: 1rem;
 
-    background: rgba(255, 255, 255, 0.04);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     backdrop-filter: blur(10px);
 
     color: var(--text-main);
@@ -444,27 +409,67 @@ main {
    - Bordure glow décorative
 ========================= */
 .main--card-promo {
-    color: var(--text-main);
     width: 80%;
     max-width: 500px;
-
     margin: 1rem auto;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
 
-    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 14px;
+    font-family: 'Iceland', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fff;
 
     backdrop-filter: blur(10px);
 
-    text-align: center;
-
-    transition: 0.2s;
+    z-index: 1;
 }
 
-.main--card-promo:hover {
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+.main--card-promo::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
 
+    background: conic-gradient(
+            from 0deg,
+            #3b82f6,
+            #a855f7,
+            var(--primary),
+            #3b82f6
+    );
+
+    animation: rotate 4s linear infinite;
+    z-index: 0;
 }
 
+.main--card-promo::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: inherit;
+    background: rgba(15, 23, 42, 0.95);
+    z-index: 1;
+}
+
+.main--card-promo > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 /* =========================
    GLASS EFFECT UTILITAIRE
